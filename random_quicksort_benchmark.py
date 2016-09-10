@@ -30,6 +30,8 @@ filename = input("Enter filename (sample.csv)") or "sample.csv"
 if not (".csv" in filename):
     filename += ".csv"
 
+f = open(filename, 'w')
+
 i = int(n // it)
 
 for x in range(it):
@@ -39,7 +41,9 @@ for x in range(it):
     start_time = time.time()
     quick_sort(c)
     stop_time = time.time() - start_time
-    print(it,",",stop_time)
+    print(i,",",stop_time)
+    f.write(str(str(i)+","+str(stop_time)+"\n"))
+    i += int(n//it)
 
 
 
